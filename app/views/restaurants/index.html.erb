@@ -1,0 +1,15 @@
+<p><em>My version of Le Wagon Lecture on 07/11/2023: Models & CRUD</em></p>
+
+<h1>A List of Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name,
+    restaurant_path(restaurant) %>   -   <em><%= link_to "Delete",
+  restaurant_path(restaurant),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></em></li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a New Restaurant", restaurants_new_path %>
